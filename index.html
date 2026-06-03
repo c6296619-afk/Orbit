@@ -1,94 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Orbit V2.0</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #ffffff;
-      color: #111;
-    }
+<meta charset="UTF-8">
+<title>Orbit V5</title>
 
-    header {
-      padding: 20px;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
+<style>
+/* =========================
+   GLOBAL STYLES
+========================= */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+}
 
-    section {
-      padding: 40px;
-      text-align: center;
-    }
+header {
+  background: white;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
 
-    .product {
-      border: 1px solid #ddd;
-      margin: 10px auto;
-      padding: 15px;
-      width: 250px;
-    }
+header h1 {
+  margin: 0;
+  letter-spacing: 3px;
+}
 
-    #buy {
-      background: #f5f5f5;
-    }
+/* =========================
+   LAYOUT
+========================= */
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
 
-    a {
-      text-decoration: none;
-      color: black;
-    }
-  </style>
+/* =========================
+   PRODUCT SECTION
+========================= */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.product-card h3 {
+  margin: 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: black;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   CART SECTION
+========================= */
+#cart {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-controls button {
+  margin: 0 3px;
+}
+
+.total {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* =========================
+   BUY SECTION
+========================= */
+#buy {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.buy-btn {
+  width: 100%;
+  margin-top: 10px;
+  background: green;
+  padding: 12px;
+  font-size: 16px;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+#contact {
+  margin-top: 30px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <h1>Orbit</h1>
-  </header>
+<header>
+  <h1>ORBIT</h1>
+</header>
 
-  <!-- PRODUCTS -->
-  <section id="products">
-    <h2>Flavors</h2>
-    <p>All bottles are priced at 150 PKR each</p>
+<div class="container">
 
-    <div class="product">
-      <h3>Apple</h3>
-      <p>Price: 150 PKR</p>
-    </div>
+<!-- =========================
+     PRODUCT LIST
+========================= -->
+<h2>Products</h2>
 
-    <div class="product">
-      <h3>Lychee</h3>
-      <p>Price: 150 PKR</p>
-    </div>
+<div class="products">
 
-    <div class="product">
-      <h3>Peach</h3>
-      <p>Price: 150 PKR</p>
-    </div>
+  <div class="product-card">
+    <h3>Blueberry</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Blueberry')">Add to Cart</button>
+  </div>
 
-    <div class="product">
-      <h3>Blueberry</h3>
-      <p>Price: 150 PKR</p>
-    </div>
+  <div class="product-card">
+    <h3>Peach</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Peach')">Add to Cart</button>
+  </div>
 
-    <div class="product">
-      <h3>Pomegranate</h3>
-      <p>Price: 150 PKR</p>
-    </div>
-  </section>
+  <div class="product-card">
+    <h3>Apple</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Apple')">Add to Cart</button>
+  </div>
 
-  <!-- BUY SECTION -->
-  <section id="buy">
-    <h2>Buy Now</h2>
+  <div class="product-card">
+    <h3>Lychee</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Lychee')">Add to Cart</button>
+  </div>
 
-    <p>All bottles cost 150 PKR each</p>
-    <p>Delivery cost will be known when you contact us</p>
+  <div class="product-card">
+    <h3>Mango</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Mango')">Add to Cart</button>
+  </div>
 
-    <a href="https://wa.me/923229408505">
-      Order on WhatsApp
-    </a>
-  </section>
+  <div class="product-card">
+    <h3>Pomegranate</h3>
+    <div class="price">150 PKR</div>
+    <button onclick="add('Pomegranate')">Add to Cart</button>
+  </div>
+
+</div>
+
+<!-- =========================
+     CART SECTION
+========================= -->
+<div id="cart">
+
+  <h2>Cart</h2>
+  <div id="cartItems"></div>
+
+  <div class="total">
+    Total: <span id="total">0</span> PKR
+  </div>
+
+  <button class="buy-btn" onclick="goToBuy()">Buy Now</button>
+
+</div>
+
+<!-- =========================
+     BUY SECTION
+========================= -->
+<div id="buy">
+
+  <h2>Buy Section</h2>
+
+  <p>All bottles are 150 PKR each.</p>
+  <p>Delivery cost will be known when you contact us.</p>
+
+  <button onclick="buyWhatsApp()">Order on WhatsApp</button>
+
+</div>
+
+<!-- =========================
+     CONTACT SECTION
+========================= -->
+<div id="contact">
+
+  <h2>Contact</h2>
+
+  <p>Feel free to reach out</p>
+
+  <p>Email: C629061998@gmail.com</p>
+  <p>Call: 032229409805 / 03219408505</p>
+
+  <a href="https://wa.me/923229408505">
+    <button>Chat on WhatsApp</button>
+  </a>
+
+</div>
+
+</div>
+
+<script>
+
+/* =========================
+   CART SYSTEM
+========================= */
+
+let cart = {};
+const price = 150;
+
+function add(item){
+  cart[item] = (cart[item] || 0) + 1;
+  renderCart();
+}
+
+function remove(item){
+  cart[item]--;
+  if(cart[item] <= 0){
+    delete cart[item];
+  }
+  renderCart();
+}
+
+function renderCart(){
+
+  let html = "";
+  let total = 0;
+
+  for(let item in cart){
+
+    let qty = cart[item];
+    let cost = qty * price;
+    total += cost;
+
+    html += `
+      <div class="cart-item">
+        <span>${item} x ${qty}</span>
+
+        <div class="cart-controls">
+          <button onclick="add('${item}')">+</button>
+          <button onclick="remove('${item}')">-</button>
+        </div>
+
+        <span>${cost} PKR</span>
+      </div>
+    `;
+  }
+
+  document.getElementById("cartItems").innerHTML = html;
+  document.getElementById("total").innerText = total;
+}
+
+/* =========================
+   FLOW CONTROL
+========================= */
+
+function goToBuy(){
+  document.getElementById("buy").scrollIntoView({behavior:"smooth"});
+}
+
+/* =========================
+   WHATSAPP ORDER
+========================= */
+
+function buyWhatsApp(){
+
+  let msg = "Order Details:%0A";
+  let total = 0;
+
+  for(let item in cart){
+    msg += item + " x " + cart[item] + "%0A";
+    total += cart[item] * price;
+  }
+
+  msg += "%0ATotal: " + total + " PKR";
+
+  window.open(
+    "https://wa.me/923229408505?text=" + msg,
+    "_blank"
+  );
+}
+
+</script>
 
 </body>
 </html>
