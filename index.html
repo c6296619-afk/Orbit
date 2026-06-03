@@ -2,133 +2,126 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Orbit V5</title>
+<title>Orbit</title>
 
 <style>
-/* =========================
-   GLOBAL STYLES
-========================= */
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  color: #111;
-}
-
-header {
-  background: white;
-  padding: 25px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-header h1 {
-  margin: 0;
-  letter-spacing: 3px;
-}
 
 /* =========================
-   LAYOUT
+   GOLD THEME BASE
 ========================= */
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#0f0f0f;
+  color:#fff;
+  scroll-behavior:smooth;
 }
 
-/* =========================
-   PRODUCT SECTION
-========================= */
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
+nav{
+  position:fixed;
+  width:100%;
+  background:#111;
+  padding:15px;
+  text-align:center;
+  border-bottom:1px solid gold;
+  z-index:1000;
 }
 
-.product-card {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  text-align: center;
+nav a{
+  color:gold;
+  margin:0 15px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.product-card h3 {
-  margin: 10px 0;
-}
-
-.price {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-button {
-  padding: 8px 12px;
-  border: none;
-  background: black;
-  color: white;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-button:hover {
-  opacity: 0.8;
+section{
+  padding:80px 20px;
+  max-width:1000px;
+  margin:auto;
 }
 
 /* =========================
-   CART SECTION
+   HERO / HOME
 ========================= */
-#cart {
-  margin-top: 30px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+
+#home{
+  text-align:center;
+  padding-top:120px;
 }
 
-.cart-item {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-}
-
-.cart-controls button {
-  margin: 0 3px;
-}
-
-.total {
-  margin-top: 15px;
-  font-size: 18px;
-  font-weight: bold;
+#home h1{
+  font-size:50px;
+  color:gold;
+  letter-spacing:4px;
 }
 
 /* =========================
-   BUY SECTION
+   COLLECTION
 ========================= */
-#buy {
-  margin-top: 30px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+
+.collection{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+  margin-top:20px;
 }
 
-.buy-btn {
-  width: 100%;
-  margin-top: 10px;
-  background: green;
-  padding: 12px;
-  font-size: 16px;
+.item{
+  background:#1a1a1a;
+  border:1px solid gold;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+}
+
+.item:hover{
+  transform:scale(1.05);
+}
+
+button{
+  padding:8px 12px;
+  background:gold;
+  border:none;
+  color:black;
+  cursor:pointer;
+  border-radius:5px;
+  font-weight:bold;
 }
 
 /* =========================
-   CONTACT SECTION
+   CART
 ========================= */
-#contact {
-  margin-top: 30px;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
+
+#cart{
+  background:#1a1a1a;
+  padding:20px;
+  border:1px solid gold;
+  border-radius:10px;
+}
+
+.cart-item{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+}
+
+.total{
+  margin-top:10px;
+  font-weight:bold;
+  color:gold;
+}
+
+/* =========================
+   OTHER SECTIONS
+========================= */
+
+#about,#contact,#buy{
+  background:#111;
+  border-left:3px solid gold;
+  padding:20px;
+  margin-top:20px;
 }
 
 </style>
@@ -137,95 +130,67 @@ button:hover {
 
 <body>
 
-<header>
+<!-- NAV -->
+<nav>
+  <a href="#home">Home</a>
+  <a href="#collection">Collection</a>
+  <a href="#buy">Buy Orbit</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#cart">Cart</a>
+</nav>
+
+<!-- HOME -->
+<section id="home">
   <h1>ORBIT</h1>
-</header>
+  <p>Premium Flavor Collection</p>
+</section>
 
-<div class="container">
+<!-- COLLECTION -->
+<section id="collection">
 
-<!-- =========================
-     PRODUCT LIST
-========================= -->
-<h2>Products</h2>
+  <h2>Our Collection</h2>
 
-<div class="products">
+  <div class="collection">
 
-  <div class="product-card">
-    <h3>Blueberry</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Blueberry')">Add to Cart</button>
+    <div class="item">Blueberry<br>150 PKR<br><button onclick="add('Blueberry')">Add</button></div>
+    <div class="item">Peach<br>150 PKR<br><button onclick="add('Peach')">Add</button></div>
+    <div class="item">Apple<br>150 PKR<br><button onclick="add('Apple')">Add</button></div>
+    <div class="item">Lychee<br>150 PKR<br><button onclick="add('Lychee')">Add</button></div>
+    <div class="item">Mango<br>150 PKR<br><button onclick="add('Mango')">Add</button></div>
+    <div class="item">Pomegranate<br>150 PKR<br><button onclick="add('Pomegranate')">Add</button></div>
+
   </div>
 
-  <div class="product-card">
-    <h3>Peach</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Peach')">Add to Cart</button>
-  </div>
+</section>
 
-  <div class="product-card">
-    <h3>Apple</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Apple')">Add to Cart</button>
-  </div>
+<!-- CART -->
+<section id="cart">
 
-  <div class="product-card">
-    <h3>Lychee</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Lychee')">Add to Cart</button>
-  </div>
+  <h2>Your Cart</h2>
+  <div id="cartBox"></div>
+  <div class="total">Total: <span id="total">0</span> PKR</div>
 
-  <div class="product-card">
-    <h3>Mango</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Mango')">Add to Cart</button>
-  </div>
+  <button onclick="buy()">Buy Now</button>
 
-  <div class="product-card">
-    <h3>Pomegranate</h3>
-    <div class="price">150 PKR</div>
-    <button onclick="add('Pomegranate')">Add to Cart</button>
-  </div>
+</section>
 
-</div>
+<!-- BUY ORBIT -->
+<section id="buy">
+  <h2>Buy Orbit</h2>
+  <p>All bottles are premium quality drinks.</p>
+  <p>Delivery cost will be confirmed on contact.</p>
+</section>
 
-<!-- =========================
-     CART SECTION
-========================= -->
-<div id="cart">
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Orbit</h2>
+  <p>Orbit is a premium beverage brand focused on unique flavors and quality experience.</p>
+</section>
 
-  <h2>Cart</h2>
-  <div id="cartItems"></div>
-
-  <div class="total">
-    Total: <span id="total">0</span> PKR
-  </div>
-
-  <button class="buy-btn" onclick="goToBuy()">Buy Now</button>
-
-</div>
-
-<!-- =========================
-     BUY SECTION
-========================= -->
-<div id="buy">
-
-  <h2>Buy Section</h2>
-
-  <p>All bottles are 150 PKR each.</p>
-  <p>Delivery cost will be known when you contact us.</p>
-
-  <button onclick="buyWhatsApp()">Order on WhatsApp</button>
-
-</div>
-
-<!-- =========================
-     CONTACT SECTION
-========================= -->
-<div id="contact">
-
+<!-- CONTACT -->
+<section id="contact">
   <h2>Contact</h2>
-
-  <p>Feel free to reach out</p>
 
   <p>Email: C629061998@gmail.com</p>
   <p>Call: 032229409805 / 03219408505</p>
@@ -233,90 +198,50 @@ button:hover {
   <a href="https://wa.me/923229408505">
     <button>Chat on WhatsApp</button>
   </a>
-
-</div>
-
-</div>
+</section>
 
 <script>
-
-/* =========================
-   CART SYSTEM
-========================= */
 
 let cart = {};
 const price = 150;
 
 function add(item){
   cart[item] = (cart[item] || 0) + 1;
-  renderCart();
+  render();
 }
 
-function remove(item){
-  cart[item]--;
-  if(cart[item] <= 0){
-    delete cart[item];
-  }
-  renderCart();
-}
-
-function renderCart(){
+function render(){
 
   let html = "";
   let total = 0;
 
-  for(let item in cart){
-
-    let qty = cart[item];
-    let cost = qty * price;
+  for(let i in cart){
+    let cost = cart[i] * price;
     total += cost;
 
-    html += `
-      <div class="cart-item">
-        <span>${item} x ${qty}</span>
-
-        <div class="cart-controls">
-          <button onclick="add('${item}')">+</button>
-          <button onclick="remove('${item}')">-</button>
-        </div>
-
-        <span>${cost} PKR</span>
-      </div>
-    `;
+    html += `<div class="cart-item">
+      <span>${i} x ${cart[i]}</span>
+      <span>${cost}</span>
+    </div>`;
   }
 
-  document.getElementById("cartItems").innerHTML = html;
+  document.getElementById("cartBox").innerHTML = html;
   document.getElementById("total").innerText = total;
 }
 
-/* =========================
-   FLOW CONTROL
-========================= */
+function buy(){
 
-function goToBuy(){
-  document.getElementById("buy").scrollIntoView({behavior:"smooth"});
-}
-
-/* =========================
-   WHATSAPP ORDER
-========================= */
-
-function buyWhatsApp(){
-
-  let msg = "Order Details:%0A";
+  let msg = "Order:%0A";
   let total = 0;
 
-  for(let item in cart){
-    msg += item + " x " + cart[item] + "%0A";
-    total += cart[item] * price;
+  for(let i in cart){
+    msg += i + " x " + cart[i] + "%0A";
+    total += cart[i] * price;
   }
 
   msg += "%0ATotal: " + total + " PKR";
 
-  window.open(
-    "https://wa.me/923229408505?text=" + msg,
-    "_blank"
-  );
+  window.open("https://wa.me/923229408505?text=" + msg, "_blank");
 }
 
 </script>
