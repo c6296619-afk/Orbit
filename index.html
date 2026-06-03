@@ -2,92 +2,172 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Orbit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORBIT | Taste Beyond Limits</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   GOLD THEME BASE
+   GLOBAL
 ========================= */
 
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
 body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#0f0f0f;
-  color:#fff;
-  scroll-behavior:smooth;
-}
-
-nav{
-  position:fixed;
-  width:100%;
-  background:#111;
-  padding:15px;
-  text-align:center;
-  border-bottom:1px solid gold;
-  z-index:1000;
-}
-
-nav a{
-  color:gold;
-  margin:0 15px;
-  text-decoration:none;
-  font-weight:bold;
-}
-
-section{
-  padding:80px 20px;
-  max-width:1000px;
-  margin:auto;
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
 /* =========================
-   HERO / HOME
+   NAVBAR
 ========================= */
 
-#home{
-  text-align:center;
-  padding-top:120px;
+nav{
+position:fixed;
+top:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,.85);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.08);
 }
 
-#home h1{
-  font-size:50px;
-  color:gold;
-  letter-spacing:4px;
+.logo{
+font-size:2rem;
+font-weight:800;
+letter-spacing:4px;
+}
+
+.logo span{ color:#1f6fff; }
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:white;
+transition:.3s;
+}
+
+nav ul li a:hover{ color:#1f6fff; }
+
+.buy-btn{
+padding:10px 25px;
+border:2px solid #1f6fff;
+border-radius:30px;
+cursor:pointer;
+background:transparent;
+color:white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+min-height:100vh;
+display:grid;
+grid-template-columns:1fr 1fr;
+align-items:center;
+padding:120px 8%;
+}
+
+.hero h1{
+font-size:6rem;
+}
+
+.hero h2{
+color:#1f6fff;
+letter-spacing:6px;
+margin-top:10px;
+}
+
+.hero p{
+margin-top:20px;
+color:#ccc;
+max-width:500px;
+}
+
+.hero-btn{
+margin-top:30px;
+display:inline-block;
+padding:15px 35px;
+background:#1f6fff;
+border-radius:30px;
+color:white;
+text-decoration:none;
 }
 
 /* =========================
    COLLECTION
 ========================= */
 
-.collection{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-  margin-top:20px;
+.section-title{
+text-align:center;
+font-size:3rem;
+margin:80px 0 40px;
 }
 
-.item{
-  background:#1a1a1a;
-  border:1px solid gold;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-  transition:0.3s;
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+padding:0 8%;
 }
 
-.item:hover{
-  transform:scale(1.05);
+.card{
+background:#0d0d0d;
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:20px;
+text-align:center;
+transition:.3s;
 }
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.bottle{
+height:200px;
+border-radius:15px;
+margin-bottom:15px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+}
+
+.blue{background:linear-gradient(180deg,#000,#0047ff);}
+.peach{background:linear-gradient(180deg,#000,#ff7b00);}
+.apple{background:linear-gradient(180deg,#000,#1dbf2a);}
+.lychee{background:linear-gradient(180deg,#000,#ff3d91);}
+.mango{background:linear-gradient(180deg,#000,#ffc400);}
+.pomegranate{background:linear-gradient(180deg,#000,#ff2222);}
 
 button{
-  padding:8px 12px;
-  background:gold;
-  border:none;
-  color:black;
-  cursor:pointer;
-  border-radius:5px;
-  font-weight:bold;
+padding:10px 18px;
+border:none;
+background:#1f6fff;
+color:white;
+border-radius:20px;
+cursor:pointer;
 }
 
 /* =========================
@@ -95,153 +175,202 @@ button{
 ========================= */
 
 #cart{
-  background:#1a1a1a;
-  padding:20px;
-  border:1px solid gold;
-  border-radius:10px;
+margin:80px 8%;
+background:#0d0d0d;
+padding:20px;
+border-radius:20px;
+border:1px solid rgba(255,255,255,.08);
 }
 
 .cart-item{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
+display:flex;
+justify-content:space-between;
+margin:10px 0;
 }
 
 .total{
-  margin-top:10px;
-  font-weight:bold;
-  color:gold;
+margin-top:10px;
+font-size:20px;
+color:#1f6fff;
 }
 
 /* =========================
-   OTHER SECTIONS
+   SECTIONS
 ========================= */
 
-#about,#contact,#buy{
-  background:#111;
-  border-left:3px solid gold;
-  padding:20px;
-  margin-top:20px;
+section{
+padding:80px 8%;
+}
+
+#buy, #about, #contact{
+background:#0b0b0b;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+#contact p{
+margin:10px 0;
+color:#ccc;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+.hero{grid-template-columns:1fr;text-align:center;}
+.hero h1{font-size:3.5rem;}
+nav ul{display:none;}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
-  <a href="#home">Home</a>
-  <a href="#collection">Collection</a>
-  <a href="#buy">Buy Orbit</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="#cart">Cart</a>
+<div class="logo">ORB<span>IT</span></div>
+
+<ul>
+<li><a href="#hero">Home</a></li>
+<li><a href="#collection">Collection</a></li>
+<li><a href="#cart">Cart</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+<button class="buy-btn" onclick="document.getElementById('cart').scrollIntoView({behavior:'smooth'})">
+Buy Now
+</button>
 </nav>
 
-<!-- HOME -->
-<section id="home">
-  <h1>ORBIT</h1>
-  <p>Premium Flavor Collection</p>
+<section class="hero" id="hero">
+<div>
+<h1>ORBIT</h1>
+<h2>TASTE BEYOND LIMITS</h2>
+<p>Premium juice crafted with bold flavors and luxury experience.</p>
+<a class="hero-btn" href="#collection">Explore</a>
+</div>
 </section>
 
-<!-- COLLECTION -->
-<section id="collection">
+<h2 class="section-title">OUR COLLECTION</h2>
 
-  <h2>Our Collection</h2>
+<div class="cards">
 
-  <div class="collection">
+<div class="card">
+<div class="bottle blue">BLUEBERRY</div>
+<h3>Blueberry</h3>
+<p>150 PKR</p>
+<button onclick="add('Blueberry')">Add to Cart</button>
+</div>
 
-    <div class="item">Blueberry<br>150 PKR<br><button onclick="add('Blueberry')">Add</button></div>
-    <div class="item">Peach<br>150 PKR<br><button onclick="add('Peach')">Add</button></div>
-    <div class="item">Apple<br>150 PKR<br><button onclick="add('Apple')">Add</button></div>
-    <div class="item">Lychee<br>150 PKR<br><button onclick="add('Lychee')">Add</button></div>
-    <div class="item">Mango<br>150 PKR<br><button onclick="add('Mango')">Add</button></div>
-    <div class="item">Pomegranate<br>150 PKR<br><button onclick="add('Pomegranate')">Add</button></div>
+<div class="card">
+<div class="bottle peach">PEACH</div>
+<h3>Peach</h3>
+<p>150 PKR</p>
+<button onclick="add('Peach')">Add to Cart</button>
+</div>
 
-  </div>
+<div class="card">
+<div class="bottle apple">APPLE</div>
+<h3>Apple</h3>
+<p>150 PKR</p>
+<button onclick="add('Apple')">Add to Cart</button>
+</div>
 
-</section>
+<div class="card">
+<div class="bottle lychee">LYCHEE</div>
+<h3>Lychee</h3>
+<p>150 PKR</p>
+<button onclick="add('Lychee')">Add to Cart</button>
+</div>
 
-<!-- CART -->
-<section id="cart">
+<div class="card">
+<div class="bottle mango">MANGO</div>
+<h3>Mango</h3>
+<p>150 PKR</p>
+<button onclick="add('Mango')">Add to Cart</button>
+</div>
 
-  <h2>Your Cart</h2>
-  <div id="cartBox"></div>
-  <div class="total">Total: <span id="total">0</span> PKR</div>
+<div class="card">
+<div class="bottle pomegranate">Pomegranate</div>
+<h3>Pomegranate</h3>
+<p>150 PKR</p>
+<button onclick="add('Pomegranate')">Add to Cart</button>
+</div>
 
-  <button onclick="buy()">Buy Now</button>
+</div>
 
-</section>
+<div id="cart">
+<h2>Your Cart</h2>
+<div id="cartBox"></div>
+<h3 class="total">Total: <span id="total">0</span> PKR</h3>
+<br>
+<button onclick="buy()">Buy on WhatsApp</button>
+</div>
 
-<!-- BUY ORBIT -->
-<section id="buy">
-  <h2>Buy Orbit</h2>
-  <p>All bottles are premium quality drinks.</p>
-  <p>Delivery cost will be confirmed on contact.</p>
-</section>
-
-<!-- ABOUT -->
 <section id="about">
-  <h2>About Orbit</h2>
-  <p>Orbit is a premium beverage brand focused on unique flavors and quality experience.</p>
+<h2>About Orbit</h2>
+<p>Orbit is a premium juice brand delivering luxury taste experience.</p>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
-  <h2>Contact</h2>
+<h2>Contact Orbit</h2>
 
-  <p>Email: C629061998@gmail.com</p>
-  <p>Call: 032229409805 / 03219408505</p>
+<p>Email: c6296619@gmail.com</p>
+<p>Call: 03229408505 / 03219408505</p>
 
-  <a href="https://wa.me/923229408505">
-    <button>Chat on WhatsApp</button>
-  </a>
+<a href="https://wa.me/923229408505">
+<button>Chat on WhatsApp</button>
+</a>
+
 </section>
 
 <script>
 
 let cart = {};
-const price = 150;
+const PRICE = 150;
 
 function add(item){
-  cart[item] = (cart[item] || 0) + 1;
-  render();
+cart[item] = (cart[item] || 0) + 1;
+render();
 }
 
 function render(){
 
-  let html = "";
-  let total = 0;
+let html = "";
+let total = 0;
 
-  for(let i in cart){
-    let cost = cart[i] * price;
-    total += cost;
+for(let i in cart){
+let cost = cart[i] * PRICE;
+total += cost;
 
-    html += `<div class="cart-item">
-      <span>${i} x ${cart[i]}</span>
-      <span>${cost}</span>
-    </div>`;
-  }
+html += `<div class="cart-item">
+<span>${i} x ${cart[i]}</span>
+<span>${cost} PKR</span>
+</div>`;
+}
 
-  document.getElementById("cartBox").innerHTML = html;
-  document.getElementById("total").innerText = total;
+document.getElementById("cartBox").innerHTML = html;
+document.getElementById("total").innerText = total;
 }
 
 function buy(){
 
-  let msg = "Order:%0A";
-  let total = 0;
+let msg = "ORDER:%0A";
+let total = 0;
 
-  for(let i in cart){
-    msg += i + " x " + cart[i] + "%0A";
-    total += cart[i] * price;
-  }
+for(let i in cart){
+msg += i + " x " + cart[i] + "%0A";
+total += cart[i] * PRICE;
+}
 
-  msg += "%0ATotal: " + total + " PKR";
+msg += "%0ATOTAL: " + total + " PKR";
 
-  window.open("https://wa.me/923229408505?text=" + msg, "_blank");
+window.open("https://wa.me/923229408505?text=" + msg, "_blank");
 }
 
 </script>
