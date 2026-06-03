@@ -3,28 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ORBIT | Ultra Luxury</title>
+<title>ORBIT | Luxury Drinks</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 
 /* =========================
-   BASE LUXURY SYSTEM
+   BASE (APPLE-STYLE MINIMAL)
 ========================= */
 
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+font-family:'Inter',sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-background:radial-gradient(circle at top,#111,#050505);
-color:white;
-overflow-x:hidden;
+background:#0b0b0b;
+color:#f5f5f5;
 }
 
 /* =========================
@@ -35,36 +34,40 @@ nav{
 position:fixed;
 top:0;
 width:100%;
-padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(255,215,0,0.1);
+padding:20px 8%;
+background:rgba(10,10,10,0.85);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,0.06);
 z-index:1000;
 }
 
 .logo{
-font-size:2rem;
-font-weight:800;
-letter-spacing:5px;
-animation:fadeDown 1s ease;
+font-size:1.6rem;
+font-weight:600;
+letter-spacing:4px;
 }
 
-.logo span{ color:gold; }
+.logo span{
+color:#c8a96a;
+}
 
 nav a{
-color:#ccc;
+color:#aaa;
 margin:0 14px;
 text-decoration:none;
+font-size:0.95rem;
 transition:.3s;
 }
 
-nav a:hover{ color:gold; }
+nav a:hover{
+color:#fff;
+}
 
 /* =========================
-   HERO (ULTRA PREMIUM)
+   HERO (EDITORIAL STYLE)
 ========================= */
 
 .hero{
@@ -73,42 +76,28 @@ display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-padding:120px 20px;
+padding:140px 20px;
 }
 
-.hero-box{
-animation:fadeUp 1.5s ease;
+.hero h1{
+font-size:5rem;
+font-weight:600;
+letter-spacing:8px;
 }
 
-.hero-title{
-font-size:6rem;
-font-weight:800;
-letter-spacing:12px;
-background:linear-gradient(90deg,#fff, gold);
--webkit-background-clip:text;
-color:transparent;
-animation:glow 3s infinite alternate;
-}
-
-.hero-sub{
-margin-top:10px;
-color:gold;
-letter-spacing:6px;
-}
-
-.hero-text{
-margin-top:15px;
-color:#bbb;
+.hero p{
+margin-top:20px;
+color:#aaa;
 max-width:600px;
 margin-left:auto;
 margin-right:auto;
-line-height:1.8;
+line-height:1.7;
 }
 
-.btn{
+.cta{
 margin-top:30px;
-padding:14px 30px;
-background:gold;
+padding:14px 28px;
+background:#c8a96a;
 border:none;
 color:black;
 border-radius:30px;
@@ -117,67 +106,73 @@ font-weight:600;
 transition:.3s;
 }
 
-.btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px gold;
+.cta:hover{
+transform:translateY(-2px);
 }
 
 /* =========================
-   COLLECTION (ANIMATED CARDS)
+   COLLECTION
 ========================= */
 
-.section-title{
-text-align:center;
-font-size:3rem;
-margin:80px 0 40px;
-color:gold;
+.section{
+padding:100px 8%;
 }
 
-.cards{
+.title{
+font-size:2.5rem;
+font-weight:600;
+margin-bottom:40px;
+text-align:center;
+}
+
+.grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:20px;
-padding:0 8%;
 }
 
 .card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,215,0,0.15);
-backdrop-filter:blur(15px);
-border-radius:18px;
-padding:25px;
-text-align:center;
-transition:.4s;
-animation:fadeUp 1s ease;
+background:#141414;
+border:1px solid rgba(255,255,255,0.06);
+border-radius:16px;
+padding:22px;
+transition:.3s;
 }
 
 .card:hover{
-transform:translateY(-12px) scale(1.02);
-border-color:gold;
-box-shadow:0 0 25px rgba(255,215,0,0.2);
+transform:translateY(-6px);
+border-color:#c8a96a;
+}
+
+.card h3{
+font-size:1.1rem;
+margin-bottom:6px;
+}
+
+.card p{
+color:#aaa;
+font-size:0.9rem;
 }
 
 .card button{
 margin-top:12px;
-padding:10px 18px;
+padding:10px 16px;
 border:none;
 border-radius:20px;
-background:gold;
+background:#c8a96a;
 color:black;
 cursor:pointer;
-font-weight:600;
 }
 
 /* =========================
    CART
 ========================= */
 
-#cart{
-margin:80px 8%;
-padding:25px;
-border-radius:20px;
-background:rgba(255,255,255,0.03);
-border:1px solid rgba(255,215,0,0.15);
+#cartBox{
+background:#111;
+padding:20px;
+border-radius:14px;
+border:1px solid rgba(255,255,255,0.06);
 }
 
 .cart-item{
@@ -188,41 +183,30 @@ margin:10px 0;
 
 .total{
 margin-top:15px;
-color:gold;
-font-size:1.3rem;
+font-size:1.2rem;
+color:#c8a96a;
 }
 
 /* =========================
    CONTACT
 ========================= */
 
-#contact{
-text-align:center;
-padding:80px 8%;
-}
-
-#contact p{
-color:#bbb;
+.contact p{
+color:#aaa;
 margin:8px 0;
+text-align:center;
 }
 
 /* =========================
-   ANIMATIONS
+   BUTTON GLOBAL
 ========================= */
 
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(40px);}
-to{opacity:1;transform:translateY(0);}
+button{
+transition:.3s;
 }
 
-@keyframes fadeDown{
-from{opacity:0;transform:translateY(-30px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes glow{
-from{filter:drop-shadow(0 0 5px gold);}
-to{filter:drop-shadow(0 0 20px gold);}
+button:hover{
+opacity:0.9;
 }
 
 </style>
@@ -230,9 +214,9 @@ to{filter:drop-shadow(0 0 20px gold);}
 
 <body>
 
-<!-- NAV -->
 <nav>
 <div class="logo">ORB<span>IT</span></div>
+
 <div>
 <a href="#hero">Home</a>
 <a href="#collection">Collection</a>
@@ -241,60 +225,86 @@ to{filter:drop-shadow(0 0 20px gold);}
 </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="hero">
-<div class="hero-box">
-
-<div class="hero-title">ORBIT</div>
-<div class="hero-sub">ULTRA LUXURY EXPERIENCE</div>
-
-<p class="hero-text">
-Crafted for perfection. Designed for elegance. Built for taste beyond limits.
+<div>
+<h1>ORBIT</h1>
+<p>
+A refined beverage experience crafted with precision, simplicity, and elegance.
 </p>
 
-<button class="btn" onclick="document.getElementById('collection').scrollIntoView()">
+<button class="cta" onclick="document.getElementById('collection').scrollIntoView()">
 Explore Collection
 </button>
+</div>
+</section>
+
+<section class="section" id="collection">
+<h2 class="title">Collection</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Blueberry</h3>
+<p>150 PKR</p>
+<button onclick="add('Blueberry')">Add</button>
+</div>
+
+<div class="card">
+<h3>Peach</h3>
+<p>150 PKR</p>
+<button onclick="add('Peach')">Add</button>
+</div>
+
+<div class="card">
+<h3>Apple</h3>
+<p>150 PKR</p>
+<button onclick="add('Apple')">Add</button>
+</div>
+
+<div class="card">
+<h3>Lychee</h3>
+<p>150 PKR</p>
+<button onclick="add('Lychee')">Add</button>
+</div>
+
+<div class="card">
+<h3>Mango</h3>
+<p>150 PKR</p>
+<button onclick="add('Mango')">Add</button>
+</div>
+
+<div class="card">
+<h3>Pomegranate</h3>
+<p>150 PKR</p>
+<button onclick="add('Pomegranate')">Add</button>
+</div>
 
 </div>
 </section>
 
-<!-- COLLECTION -->
-<h2 class="section-title">OUR COLLECTION</h2>
-
-<div class="cards">
-
-<div class="card"><h3>Blueberry</h3><p>150 PKR</p><button onclick="add('Blueberry')">Add</button></div>
-<div class="card"><h3>Peach</h3><p>150 PKR</p><button onclick="add('Peach')">Add</button></div>
-<div class="card"><h3>Apple</h3><p>150 PKR</p><button onclick="add('Apple')">Add</button></div>
-<div class="card"><h3>Lychee</h3><p>150 PKR</p><button onclick="add('Lychee')">Add</button></div>
-<div class="card"><h3>Mango</h3><p>150 PKR</p><button onclick="add('Mango')">Add</button></div>
-<div class="card"><h3>Pomegranate</h3><p>150 PKR</p><button onclick="add('Pomegranate')">Add</button></div>
-
-</div>
-
-<!-- CART -->
-<section id="cart">
-<h2 class="section-title">YOUR CART</h2>
+<section class="section" id="cart">
+<h2 class="title">Cart</h2>
 
 <div id="cartBox"></div>
 <div class="total">Total: <span id="total">0</span> PKR</div>
 
 <br>
-<button class="btn" onclick="buy()">BUY ON WHATSAPP</button>
+<button class="cta" onclick="buy()">Buy on WhatsApp</button>
 </section>
 
-<!-- CONTACT -->
-<section id="contact">
-<h2 class="section-title">CONTACT</h2>
+<section class="section" id="contact">
+<h2 class="title">Contact</h2>
+
+<div class="contact">
 
 <p>Email: c6296619@gmail.com</p>
 <p>Call: 03229408505 / 03219408505</p>
 
 <a href="https://wa.me/92329408505">
-<button class="btn">CHAT ON WHATSAPP</button>
+<button class="cta">Chat on WhatsApp</button>
 </a>
 
+</div>
 </section>
 
 <script>
